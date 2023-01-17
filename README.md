@@ -1,7 +1,5 @@
 ## **Bug bounty environment**
-Script to set up my personal environment for bug bounty.
-
----
+Script to set up my personal environment for bug bounty
 
 ## **List of tools**
 
@@ -17,11 +15,18 @@ Script to set up my personal environment for bug bounty.
 - dirb
 - amass
 
----
+## **Bash aliases file**
 
-## **.bash_rc aliases file**
+Also my alias file to improve my workflow
 
-Also my alias file to improve my workflow.
 
+## **How to install**
+
+```
+git clone https://github.com/ermclm/bugbountyenv
+cd bugbountyenv
+chmod +x install.sh
+./install.sh
+```
 
 
