@@ -11,7 +11,8 @@ sudo apt-get upgrade -y
 echo ""
 
 echo -e "${BLUE}Preparing environment with needed packages...${ENDCOLOR}"
-sudo apt-get install -y libcurl4-openssl-dev libssl-dev jq ruby-full unzip libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev build-essential libssl-dev libffi-dev python3-dev python-setuptools libldns-dev python3-pip python3-dns python3 git rename
+sudo apt-get install -y libcurl4-openssl-dev libssl-dev jq ruby-full unzip libpq-dev vim telnet libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev build-essential libssl-dev libffi-dev python3-dev python-setuptools libldns-dev python3-pip python3-dns python3 git rename
+pip3 install psycopg2-binary mysql-connector-python-rf requests_ntlm defusedxml bs4 jinja2
 echo ""
 
 
@@ -64,7 +65,7 @@ echo ""
 echo -e "${BLUE}Installing Sublist3r...${ENDCOLOR}"
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
-sudo pip install -r requirements.txt
+pip3 install -r requirements.txt
 cd ~/tools/
 echo ""
 
@@ -82,6 +83,11 @@ cd wpscan*
 echo 3.2.0 > .ruby-version
 gem instal bundler && bundle install --without test
 cd ~/tools/
+echo ""
+
+
+echo -e "${BLUE}Installing subfinder...${ENDCOLOR}"
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 echo ""
 
 
@@ -125,8 +131,13 @@ cd ~/tools/
 echo ""
 
 
+echo -e "${BLUE}Installing ffuf...${ENDCOLOR}"
+go install github.com/ffuf/ffuf@latest
+echo ""
+
+
 echo -e "${BLUE}Installing httprobe...${ENDCOLOR}"
-sudo go get -u github.com/tomnomnom/httprobe 
+go install github.com/tomnomnom/httprobe@latest
 echo ""
 
 
